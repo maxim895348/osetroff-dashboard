@@ -184,4 +184,5 @@ with tab3:
     if not df_exp.empty:
         m_agg = df_exp.groupby(['manager', 'category'])['amount'].sum().reset_index().sort_values('amount', ascending=False)
         fig_bar = px.bar(m_agg, x='manager', y='amount', color='category', title='Топ расходов по менеджерам')
+
         st.plotly_chart(fig_bar, use_container_width=True)
